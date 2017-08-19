@@ -1,31 +1,61 @@
 <!DOCTYPE html>
 <ntml>
+
     <head>
-        
+
         <title>Employee Full-Stack</title>
         <link rel="stylesheet" href="./styles/styles.css">
         <script src='./vendors/angular.min.js'></script>
         <script src='./vendors/client.js'></script>
     </head>
+
     <body ng-app="EmployeeApp" ng-controller="EmployeeController as vm">
         <h1>Employee Full Stack Form</h1>
         <form id='newEmployeeForm'>
-        <label for="firstName">First Name:</label><input type="text" name='firstName' placeholder="First Name" ng-model="vm.newEmployee.firstName">
+            <label for="firstName">First Name:</label><input type="text" name='firstName' placeholder="First Name" ng-model="vm.newEmployee.firstName">
 
-        <label for="lastName">Last Name:</label><input type="text" name='lastName' placeholder="Last Name" ng-model="vm.newEmployee.lastName">
+            <label for="lastName">Last Name:</label><input type="text" name='lastName' placeholder="Last Name" ng-model="vm.newEmployee.lastName">
 
-        <br>
+            <br>
 
-        <label for="jobTitle">Job Title:</label><input type="text" name='jobTitle' placeholder="Job Title" ng-model="vm.newEmployee.jobTitle">
+            <label for="jobTitle">Job Title:</label><input type="text" name='jobTitle' placeholder="Job Title" ng-model="vm.newEmployee.jobTitle">
 
-        <label for="annualSalary">Annual Salary:</label><input type="text" name='annualSalary' placeholder="Annual Salary" ng-model="vm.newEmployee.annualSalary">
+            <label for="annualSalary">Annual Salary:</label><input type="text" name='annualSalary' placeholder="Annual Salary"
+                ng-model="vm.newEmployee.annualSalary">
 
-        <br>
+            <br>
 
-        <button ng-click="submitNewEmployee">Submit</button>
+            <button ng-click="submitNewEmployee">Submit</button>
         </form>
 
-        {{vm.newEmployee}}
-        
+        <br>
+        {{vm.employeeList}}
+        <br>
+
+        <h1>Employees:</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name:</th>
+                    <th>Last Name:</th>
+                    <th>Job Description:</th>
+                    <th>Annual Salary:</th>
+                </tr>
+            </thead>
+            <tablebody>
+                <tr ng-repeat="person in vm.employeeList">
+                    <td>{{person.first_name}}</td>
+                    <td>{{person.last_name}}</td>
+                    <td>{{person.job_description}}</td>
+                    <td>{{person.annual_salary}}</td>
+                </tr>
+            </tablebody>
+
+        </table>
+        <div>
+            
+        </div>
     </body>
-</html>
+
+    </html>
