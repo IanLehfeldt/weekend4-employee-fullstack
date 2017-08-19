@@ -1,0 +1,26 @@
+{
+  "name": "weekend4-employee-fullstack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/server/app.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "pg": "^7.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IanLehfeldt/weekend4-employee-fullstack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IanLehfeldt/weekend4-employee-fullstack/issues"
+  },
+  "homepage": "https://github.com/IanLehfeldt/weekend4-employee-fullstack#readme"
+}
