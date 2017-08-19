@@ -5,6 +5,7 @@ app.controller('EmployeeController', ['$http', function ($http) {
     var self = this;
 
     self.employeeList = [];
+    self.averageSalary = 0;
 
     self.getEmployees = function () {
         $http({
@@ -13,7 +14,10 @@ app.controller('EmployeeController', ['$http', function ($http) {
         }).then(function (response) {
             console.log(response.data);
             self.employeeList = response.data;
-            self.totalSalary += response.data.annual_salary;
+            for (var i = 0; i < self.employeeList.length; i++){
+                var employee = self.employeeList[i];
+                self.averageSalary += (employee.annual_salary)/(self.employeeList.length);
+            }
         });
     }
 
