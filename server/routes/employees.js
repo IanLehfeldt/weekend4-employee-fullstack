@@ -24,7 +24,6 @@ router.get('/', function (req, res) {
 }); // get route
 
 router.post('/', function (req, res) {
-    console.log(req.body);
     console.log('employee post route hit');
 
     pool.connect(function (err, db, done) {
@@ -42,7 +41,6 @@ router.post('/', function (req, res) {
                         res.sendStatus(500);
                     } else {
                         done();
-                        console.log(result);
                         res.sendStatus(200);
                     }
                 });
