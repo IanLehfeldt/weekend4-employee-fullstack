@@ -1,8 +1,8 @@
 var express = require('express');
+var bodyParser = require('body-parser');
+var employees = require('./routes/employees');
 var app = express();
 var port = 5000;
-var employees = require('./routes/employees');
-var bodyParser = require('body-parser');
 
 app.use(express.static('public'));
 

@@ -25,9 +25,11 @@
 
             <br>
 
-            <button ng-click="submitNewEmployee">Submit</button>
+            <button ng-click="vm.submitNewEmployee()">Submit</button>
         </form>
 
+        <br>
+        {{vm.newEmployee}}
         <br>
         {{vm.employeeList}}
         <br>
