@@ -4,7 +4,7 @@ app.controller('EmployeeController', ['$http', function ($http) {
     console.log('Employee Controller is ready!');
     var self = this;
 
-    
+
 
     self.getEmployees = function () {
         $http({
@@ -15,10 +15,18 @@ app.controller('EmployeeController', ['$http', function ($http) {
             self.averageSalary = 0;
             console.log(response.data);
             self.employeeList = response.data;
-            for (var i = 0; i < self.employeeList.length; i++){
+            
+            activeEmployee = [];
+            self.averageSalary = 0;
+            for (var i = 0; i < self.employeeList.length; i++) {
                 var employee = self.employeeList[i];
-                self.averageSalary += (employee.annual_salary)/(self.employeeList.length);
+                if (employee.is_active) {
+                    activeEmployee.push(employee);
+                    console.log(activeEmployee);
+                    self.averageSalary += (employee.annual_salary)
+                }
             }
+            self.averageSalary = self.averageSalary / (activeEmployee.length);
         });
     }; // get employee
 
@@ -28,12 +36,26 @@ app.controller('EmployeeController', ['$http', function ($http) {
             method: 'POST',
             url: '/employees',
             data: self.newEmployee
-        }).then(function (response){
+        }).then(function (response) {
             self.newEmployee = {};
             console.log(response.data);
             self.getEmployees();
         });
     }; // new employee
 
+    self.activeToggle = function (id) {
+        console.log('activeToggle was clicked');
+        $http({
+            method: 'PUT',
+            url: '/employees/' + id,
+        }).then(function (response){
+            self.getEmployees();
+        })
+    }
+
     self.getEmployees();
 }]); // employee controller
+
+function salaryAverager(employeeArray) {
+
+}

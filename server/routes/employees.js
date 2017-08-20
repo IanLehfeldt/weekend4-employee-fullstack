@@ -26,7 +26,7 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
     console.log(req.body);
     console.log('employee post route hit');
-    
+
     pool.connect(function (err, db, done) {
         if (err) {
             done();
@@ -49,5 +49,28 @@ router.post('/', function (req, res) {
         }
     });
 }); // post route
+
+router.put('/:id', function (req, res) {
+    pool.connect(function (err, db, done) {
+        if (err) {
+            done();
+            console.log('Error connecting to database', err);
+            res.sendStatus(500);
+        } else {
+            db.query('UPDATE employees SET "is_active"= NOT "is_active" WHERE id = $1;',
+                [req.params.id],
+                function (queryErr, result) {
+                    if (queryErr) {
+                        done();
+                        console.log('Error making query', queryErr);
+                        res.sendStatus(500);
+                    } else {
+                        done();
+                        res.sendStatus(200);
+                    }
+                });
+        }
+    });
+}); // put route
 
 module.exports = router;
