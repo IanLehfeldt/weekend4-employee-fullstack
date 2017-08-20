@@ -1,0 +1,23 @@
+body {
+    background-color: #FFAE5D;
+}
+
+h1{
+    color: #6F3662;
+}
+
+table{
+    background-color: #F8F8F2;
+    width: 50%;
+}
+
+form {
+    background-color: #F8DEBD;
+    width: 50%;
+}
+
+#averageDiv {
+    background-color: #6F3662;
+    color: #F8F8F2;
+    width: 50%;
+}

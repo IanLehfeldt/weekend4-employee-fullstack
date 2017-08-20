@@ -15,15 +15,22 @@ app.controller('EmployeeController', ['$http', function ($http) {
             self.employeeList = response.data;
             
             activeEmployee = [];
+            self.totalActiveSalary = 0;
 
             for (var i = 0; i < self.employeeList.length; i++) {
                 var employee = self.employeeList[i];
                 if (employee.is_active) {
                     activeEmployee.push(employee);
-                    self.averageSalary += (employee.annual_salary);
+                    self.totalActiveSalary += employee.annual_salary;
                 }
             }
-            self.averageSalary = self.averageSalary / (activeEmployee.length);
+
+            console.log(self.totalActiveSalary);
+            
+            // self.averageSalary = totalActiveSalary / (activeEmployee.length);
+
+            self.monthlyAverage = self.totalActiveSalary / 12;
+            
         });
     }; // get employee
 
