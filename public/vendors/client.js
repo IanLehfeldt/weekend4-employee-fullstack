@@ -4,8 +4,6 @@ app.controller('EmployeeController', ['$http', function ($http) {
     console.log('Employee Controller is ready!');
     var self = this;
 
-
-
     self.getEmployees = function () {
         $http({
             method: 'GET',

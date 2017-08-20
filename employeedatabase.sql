@@ -8,5 +8,7 @@ CREATE TABLE employees (
 	
 	
 INSERT INTO employees (first_name, last_name, job_description, annual_salary)
-VALUES ('Grant', 'Portell', 'NBA Allstar','4500000'),
-('Ian', 'Lehfeldt', 'Super Villian','4000000');
+VALUES ('Grant', 'Portell', 'NBA Allstar','450000'),
+('Ian', 'Lehfeldt', 'Super Villian','400000'),
+('Janelle', 'Monae', 'Musician', '600000'),
+('Clark', 'Kent', 'Reporter', '300000');

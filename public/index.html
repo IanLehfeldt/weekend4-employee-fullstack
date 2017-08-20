@@ -51,8 +51,8 @@
                     <td>{{person.last_name}}</td>
                     <td>{{person.job_description}}</td>
                     <td>{{person.annual_salary | number:2}}</td>
-                    <td ng-if="person.is_active"><button ng-click="vm.activeToggle(person.id)">Deactivate</button></td>
-                    <td ng-if="!person.is_active"><button ng-click="vm.activeToggle(person.id)">Activate</button></td>
+                    <td ng-if="person.is_active"><button ng-click="vm.activeToggle(person.id)">Active</button></td>
+                    <td ng-if="!person.is_active"><button ng-click="vm.activeToggle(person.id)">Deactive</button></td>
                 </tr>
             </tablebody>
         </table>
