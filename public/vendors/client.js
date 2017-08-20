@@ -4,7 +4,7 @@ app.controller('EmployeeController', ['$http', function ($http) {
     console.log('Employee Controller is ready!');
     var self = this;
 
-    self.averageSalary = 0;
+    
 
     self.getEmployees = function () {
         $http({
@@ -12,6 +12,7 @@ app.controller('EmployeeController', ['$http', function ($http) {
             url: '/employees',
         }).then(function (response) {
             self.employeeList = [];
+            self.averageSalary = 0;
             console.log(response.data);
             self.employeeList = response.data;
             for (var i = 0; i < self.employeeList.length; i++){
