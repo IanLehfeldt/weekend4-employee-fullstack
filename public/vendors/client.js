@@ -17,13 +17,12 @@ app.controller('EmployeeController', ['$http', function ($http) {
             self.employeeList = response.data;
             
             activeEmployee = [];
-            self.averageSalary = 0;
+
             for (var i = 0; i < self.employeeList.length; i++) {
                 var employee = self.employeeList[i];
                 if (employee.is_active) {
                     activeEmployee.push(employee);
-                    console.log(activeEmployee);
-                    self.averageSalary += (employee.annual_salary)
+                    self.averageSalary += (employee.annual_salary);
                 }
             }
             self.averageSalary = self.averageSalary / (activeEmployee.length);

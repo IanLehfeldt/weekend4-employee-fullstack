@@ -29,9 +29,9 @@
         </form>
 
         <br>
-        {{vm.newEmployee}}
+        <!-- {{vm.newEmployee}} -->
         <br>
-        {{vm.employeeList}}
+        <!-- {{vm.employeeList}} -->
         <br>
 
         <h1>Employees:</h1>
@@ -50,7 +50,7 @@
                     <td>{{person.first_name}}</td>
                     <td>{{person.last_name}}</td>
                     <td>{{person.job_description}}</td>
-                    <td>{{person.annual_salary}}</td>
+                    <td>{{person.annual_salary | number:2}}</td>
                     <td ng-if="person.is_active"><button ng-click="vm.activeToggle(person.id)">Deactivate</button></td>
                     <td ng-if="!person.is_active"><button ng-click="vm.activeToggle(person.id)">Activate</button></td>
                 </tr>
@@ -60,7 +60,8 @@
         <br>
 
         <div>
-            {{vm.averageSalary}}
+            <h3>Monthly Salary Expenditure:</h3>
+            {{vm.averageSalary | number:2}}
         </div>
     </body>
 
