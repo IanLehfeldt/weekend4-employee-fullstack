@@ -5,7 +5,8 @@ CREATE TABLE employees (
 	job_description VARCHAR (60) NOT NULL,
 	annual_salary integer NOT NULL
 	);
-	
+
+ALTER TABLE employees ADD COLUMN "is_active" boolean NOT NULL DEFAULT 'true'
 	
 INSERT INTO employees (first_name, last_name, job_description, annual_salary)
 VALUES ('Grant', 'Portell', 'NBA Allstar','450000'),
