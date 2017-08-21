@@ -6,10 +6,10 @@ CREATE TABLE employees (
 	annual_salary integer NOT NULL
 	);
 
-ALTER TABLE employees ADD COLUMN "is_active" boolean NOT NULL DEFAULT 'true'
-	
 INSERT INTO employees (first_name, last_name, job_description, annual_salary)
 VALUES ('Grant', 'Portell', 'NBA Allstar','450000'),
 ('Ian', 'Lehfeldt', 'Super Villian','400000'),
 ('Janelle', 'Monae', 'Musician', '600000'),
 ('Clark', 'Kent', 'Reporter', '300000');
+
+ALTER TABLE employees ADD COLUMN "is_active" boolean NOT NULL DEFAULT 'true'
